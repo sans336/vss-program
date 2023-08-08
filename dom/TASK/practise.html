@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #div {
+      background-color: aqua;
+      color: white;
+      margin: 0%;
+    }
+    .element2 {
+      background-color: blueviolet;
+    }
+    .element3 {
+      background-color: black;
+    }
+  </style>
+  <body>
+    <div id="div">welcome</div>
+  </body>
+</html>
+<script>
+  //   let numbers = [
+  //     10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+  //     105,
+  //   ];
+
+  // calling a div nd chnging a text of it//
+  const element = document.getElementById("div");
+
+  const innerText = element.innerText;
+  element.innerText = "welcome to vss";
+  console.log(element.innerText);
+
+  // creating a div inside maindiv and inserting text nd adding a class
+  let element2 = document.createElement("h1");
+  element2.classList.add("element2");
+  element2.textContent = "hi this is element2";
+  let element3 = document.createElement("h1");
+  element3.classList.add("element3");
+  element3.style.padding = "32px"; //styling
+  element3.textContent = "hi this is element3";
+  element2.append(element3);
+  element.append(element2);
+
+  let elem = document.createElement("p");
+  elem.classList.add("elem");
+  elem.innerText = "hi again";
+  element.append(elem);
+  elem.style.backgroundColor = "red";
+</script>

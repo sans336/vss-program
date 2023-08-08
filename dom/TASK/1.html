@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>
+      Using "getElementById" method to find the element with in the document
+      with a specific id.
+    </h2>
+    <p id="id1">This element has id = "id1".</p>
+    <button onclick="findElement()">Access element</button>
+  </body>
+</html>
+<script>
+  //   for (var props in document) {
+  //     console.log(props + " => " + document[props]);
+  //   }
+
+  function findElement() {
+    const element = document.getElementById("id1");
+    element.innerText = "element found";
+  }
+</script>

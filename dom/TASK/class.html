@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript - DOM querySelector 2</title>
+  </head>
+
+  <body>
+    <h2>
+      Getting the first element wich matches given CSS selector string using
+      "querySelector" method.
+    </h2>
+    <div id="sun">
+      <div class="mercury">
+        <div class="moon">
+          <p>Mercury has 0 moon.</p>
+        </div>
+      </div>
+      <div class="earth">
+        <div class="moon">
+          <p>Earth has 1 moon.</p>
+        </div>
+      </div>
+      <div class="mars">
+        <div class="moon">
+          <p>Mars has 2 moon.</p>
+        </div>
+      </div>
+    </div>
+    <button onclick="changeColor()">Change Color!</button>
+
+    <script>
+      // Selecting element which matches CSS selector string
+      const element = document.querySelector("#sun .earth .moon p");
+      console.log(element);
+
+      function changeColor() {
+        element.style.color = "red";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Keyword Search</title>
+  </head>
+  <body>
+    <input type="text" id="searchInput" placeholder="Search keywords..." />
+
+    <script src="script.js"></script>
+  </body>
+</html>
+<script>
+  const keywords = [
+    "apple",
+    "banana",
+    "cherry",
+    "orange",
+    "kiwi",
+    "mango",
+    "pear",
+    "pineapple",
+  ];
+
+  const searchInput = document.getElementById("searchInput");
+  const keywordList = document.getElementById("keywordList");
+
+  searchInput.addEventListener("input", handleSearch);
+
+  function handleSearch() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredKeywords = keywords.filter((keyword) =>
+      keyword.toLowerCase().includes(searchTerm)
+    );
+
+    displayKeywords(filteredKeywords);
+  }
+
+  function displayKeywords(filteredKeywords) {
+    keywordList.innerHTML = "";
+
+    filteredKeywords.forEach((keyword) => {
+      const li = document.createElement("li");
+      li.textContent = keyword;
+      keywordList.appendChild(li);
+    });
+  }
+</script>

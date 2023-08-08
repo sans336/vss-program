@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript - Toggle class</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .dark {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Toggling "dark" class to the "body" element using "toggle" method.</h2>
+    <p>You can create dark mode using just a simple operation.</p>
+    <button onclick="toggleClass()">Change Mode!</button>
+
+    <script>
+      const element = document.querySelector("body");
+
+      function toggleClass() {
+        element.classList.toggle("dark");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <!-- <div class="1" id="parent">hi</div> -->
+    <div id="1">
+      <ul id="2" class="3">
+        <li class="list">first</li>
+        <li class="list">second</li>
+        <li class="list">third</li>
+      </ul>
+    </div>
+  </body>
+</html>
+<script>
+  //   // Step 1: Access the parent element
+  //   const parentElement = document.getElementById("parent");
+
+  //   // Step 2: Create the new element
+  //   const newElement = document.createElement("div");
+
+  //   // Step 3: Modify properties or content of the new element
+  //   newElement.textContent = "number";
+
+  //   // Step 4: Append the new element to the parent element
+  //   parentElement.appendChild(newElement);
+
+  console.log(document.body);
+
+  const newDiv = document.createElement("h1");
+  const newText = document.createTextNode("hi everyone");
+  newDiv.appendChild(newText);
+  body.append(newDiv);
+</script>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      #products {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 200px;
+        height: 160px;
+        background-color: tomato;
+        color: rgb(7, 0, 0);
+        padding: 12px;
+      }
+
+      .imageclass {
+        width: 150px;
+        height: 80px;
+      }
+      #myInput {
+        width: 40%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="myInput"
+      onkeyup="myFunction()"
+      placeholder="Search for names.."
+    />
+
+    <div id="products"></div>
+  </body>
+</html>
+
+<script>
+  const productListContainer = document.getElementById("products");
+  const result = fetch("./3.json");
+  /* result
+    .then((aayaHuaData) => aayaHuaData.json())
+    .then((meraData) => {
+      renderUI(meraData);
+    }); */
+
+  result
+    .then(function (aayaHuaData) {
+      return aayaHuaData.json();
+    })
+    .then(function (meraUparSeAayaHuaData) {
+      console.log("Result: ", meraUparSeAayaHuaData);
+
+      for (let i = 0; i < meraUparSeAayaHuaData.length; i++) {
+        const currentProduct = meraUparSeAayaHuaData[i];
+
+        const cardElem = document.createElement("div");
+        cardElem.className = "card";
+
+        const titleElem = document.createElement("p");
+        titleElem.innerText = meraUparSeAayaHuaData[i].title;
+
+        const imgElem = document.createElement("img");
+        imgElem.src = meraUparSeAayaHuaData[i].image;
+        imgElem.className = "imageclass";
+
+        cardElem.appendChild(titleElem);
+
+        cardElem.appendChild(imgElem);
+        productListContainer.appendChild(cardElem);
+      }
+    });
+
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+  /* function giveMeDataAndILLLoopAndRenderUI(data) {
+    console.log("Data insider renderUI: ", data);
+  } */
+</script>

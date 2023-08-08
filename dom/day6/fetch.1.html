@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  fetch("https://api.publicapis.org/entries", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer token",
+    },
+    body: JSON.stringify({ key: "value" }),
+  })
+    .then((response) => {
+      // Handle the response
+    })
+    .catch((error) => {
+      // Handle any errors
+    });
+</script>

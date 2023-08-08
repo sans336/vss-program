@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+      }
+      .grid-item {
+        display: flex;
+        justify-content: center;
+      }
+      .red {
+        background-color: red;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container" id="gridContainer"></div>
+    <script>
+      let numbers = [
+        10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+        100, 105,
+      ];
+
+      function createGrid(number) {
+        const gridItem = document.createElement("div");
+        gridItem.classList.add("grid-item");
+
+        if (number % 2 === 0) {
+          gridItem.classList.add("red");
+        } else {
+          gridItem.classList.add("blue");
+        }
+        gridItem.textContent = number;
+        // gridItem.addEventListener("click", function () {
+        //   alert(`Card Number: ${number}`);
+        // });
+        return gridItem;
+      }
+      const gridContainer = document.getElementById("gridContainer");
+      for (let i = 0; i < numbers.length; i++) {
+        const number = numbers[i];
+        const gridItem = createGrid(number);
+        gridContainer.appendChild(gridItem);
+      }
+    </script>
+  </body>
+</html>

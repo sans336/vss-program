@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  function searchArrayByKeyword(data, keyword) {
+    const results = [];
+
+    // Convert the keyword to lowercase for case-insensitive search
+    const lowercaseKeyword = keyword.toLowerCase();
+
+    // Iterate through the array and check if the keyword is present in the 'name' property
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      console.log(item.name);
+    }
+    return results;
+  }
+  const keyword = "john";
+  const searchResults = searchArrayByKeyword(data, keyword);
+  console.log(searchResults);
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript - Add class</title>
+    <style>
+      .color {
+        color: red;
+      }
+
+      .size {
+        font-size: 2rem;
+      }
+
+      .border {
+        border: 1px solid silver;
+      }
+
+      .padding {
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Adding classes to the "p" element using "add" method.</h2>
+    <p class="border">This is a paragraph.</p>
+    <button onclick="addSize()">Add Size!</button>
+    <button onclick="addPaddingAndColor()">Add Padding And Color!</button>
+
+    <script>
+      const element = document.querySelector("p");
+
+      function addSize() {
+        element.classList.add("size");
+      }
+      function addPaddingAndColor() {
+        element.classList.add("padding", "color");
+      }
+    </script>
+  </body>
+</html>

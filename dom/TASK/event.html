@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript - DOM add event listener</title>
+  </head>
+
+  <body>
+    <h2>
+      Use <code>addEventListener()</code> to add an event listener to an element
+    </h2>
+    <p id="element">Bring mouse over me</p>
+    <button onclick="addEvent()">Add event</button>
+    <p>Press <kbd>F12</kbd> to see the created element.</p>
+
+    <script>
+      // selecting element
+      const element = document.getElementById("element");
+
+      // changing color of element
+      function addEvent() {
+        element.addEventListener("mouseover", function () {
+          alert("Mouse is over me!");
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript addEventListener()</h2>
+
+    <p>
+      This example uses the addEventListener() method to attach a click event to
+      a button.
+    </p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+      document.getElementById("myBtn").addEventListener("click", displayDate);
+
+      function displayDate() {
+        alert(Date());
+      }
+    </script>
+  </body>
+</html>

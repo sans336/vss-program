@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .grid-container {
+      display: flex;
+      flex-direction: row;
+
+      height: 50px;
+
+      gap: 10px;
+      padding: 20px;
+    }
+    .grid-item {
+      display: flex;
+      justify-content: center;
+    }
+    .red {
+      background-color: red;
+    }
+    .sky {
+      background-color: skyblue;
+    }
+  </style>
+  <body>
+    <div class="grid-container" id="gridContainer"></div>
+  </body>
+</html>
+<script>
+  let numbers = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+
+  function createGrid(number) {
+    let gridItem = document.createElement("div");
+    gridItem.classList.add("gird-item");
+
+    if (number % 2 === 0) {
+      gridItem.classList.add("red");
+    } else {
+      gridItem.classList.add("sky");
+    }
+    gridItem.textContent = number;
+
+    return gridItem;
+  }
+  const gridContainer = document.getElementById("gridContainer");
+  for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+    const gridItem = createGrid(number);
+    gridContainer.append(gridItem);
+  }
+</script>

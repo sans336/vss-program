@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript - DOM append element</title>
+  </head>
+
+  <body>
+    <h2>
+      <code>append()</code> method appends element to the parent which invokes
+      the method.
+    </h2>
+    <div id="parent">
+      <p>This is first child.</p>
+    </div>
+    <button onclick="addChild()">Add Child</button>
+
+    <script>
+      function addChild() {
+        const parent = document.getElementById("parent"); // selecting parent
+        const child = document.createElement("p"); // creating child
+        child.innerHTML = "This is second child"; // adding some content
+        parent.append(child);
+      }
+    </script>
+  </body>
+</html>
