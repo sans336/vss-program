@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .mobile,
+      .tablet,
+      .laptop,
+      .projector {
+        display: none;
+        font-size: 42px;
+      }
+
+      @media screen and (max-width: 460px) {
+        .mobile {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 461px) and (max-width: 768px) {
+        .tablet {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 769px) and (max-width: 1324px) {
+        .laptop {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 1325px) {
+        .projector {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="mobile">Mobile</div>
+      <div class="tablet">Tablet</div>
+      <div class="laptop">Laptop</div>
+      <div class="projector">Projector</div>
+    </div>
+  </body>
+</html>
