@@ -90,3 +90,4 @@ const active = p.map(person => {
   }
 });
 console.log(active)
+console.log(p)
