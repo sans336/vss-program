@@ -106,15 +106,17 @@
 
 // question-13
 
-// var x = 10;//////////////////
-// function test() {
+var x = 10;
+function test() {
 //   if (x > 20) {
 //     var x = 50;
 //   }
 
-//   console.log(x);
-// }
-// test(); //undefined
+    // console.log(x);
+    return x;
+    
+}
+test(); //undefined
 
 // quetion-14
 
